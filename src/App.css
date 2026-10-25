@@ -1,0 +1,1057 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #302938;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(circle at 10% 10%, #ffe0cf, transparent 30%),
+    radial-gradient(circle at 90% 15%, #e5dcff, transparent 32%),
+    radial-gradient(circle at 50% 90%, #d9f6e7, transparent 35%),
+    #fffaf7;
+
+  background-size: 140% 140%;
+  animation: backgroundMove 14s ease-in-out infinite alternate;
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.app {
+  position: relative;
+  max-width: 1180px;
+  margin: auto;
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 280px;
+  height: 280px;
+  background: #ffd4c1;
+  top: 10%;
+  left: -120px;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 330px;
+  height: 330px;
+  background: #d9ccff;
+  top: 42%;
+  right: -150px;
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+.orb-3 {
+  width: 280px;
+  height: 280px;
+  background: #c9f1dc;
+  bottom: -80px;
+  left: 40%;
+  animation: floatOrb 9s ease-in-out infinite;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(30px, -25px);
+  }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+  animation: slideDown 0.7s ease both;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #ffd77c, #ffc65c);
+
+  color: #513c20;
+
+  box-shadow:
+    0 10px 30px #eab95d45,
+    inset 0 1px #ffffffaa;
+
+  animation: gentleBounce 3s ease-in-out infinite;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brand-tag {
+  margin-top: 2px;
+  color: #978c9b;
+  font-size: 11px;
+}
+
+.sparkle-button {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #ffffff80;
+  backdrop-filter: blur(15px);
+
+  color: #756979;
+
+  transition: 0.3s;
+}
+
+.sparkle-button:hover {
+  transform: rotate(20deg) scale(1.1);
+  background: #fff;
+  box-shadow: 0 10px 30px #6e5a7918;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 95px 15px 85px;
+  animation: heroAppear 0.9s ease both;
+}
+
+.station-badge {
+  width: fit-content;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border-radius: 100px;
+
+  background: #ffffff91;
+  backdrop-filter: blur(15px);
+
+  border: 1px solid #ffffff;
+
+  color: #8c7587;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  box-shadow: 0 12px 35px #5f4c6812;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #70c995;
+
+  box-shadow: 0 0 0 5px #70c99520;
+
+  animation: pulse 1.8s infinite;
+}
+
+.hero h1 {
+  margin-top: 27px;
+
+  font-size: clamp(65px, 11vw, 120px);
+
+  line-height: 1.05;
+
+  letter-spacing: -5px;
+}
+
+.hero h1 span {
+  display: inline-block;
+
+  margin-left: 7px;
+
+  font-family: "Pacifico", cursive;
+
+  color: #ef8b73;
+
+  font-weight: 400;
+
+  animation: gentleBounce 3s ease-in-out infinite;
+}
+
+.hero-description {
+  margin: 30px auto;
+
+  color: #786e7d;
+
+  font-size: 18px;
+
+  line-height: 1.9;
+}
+
+.main-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 17px 25px 17px 28px;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    135deg,
+    #403747,
+    #292331
+  );
+
+  color: white;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 18px 40px #39324135,
+    inset 0 1px #ffffff18;
+
+  transition: 0.3s;
+
+  overflow: hidden;
+}
+
+.main-button::before {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 100%;
+
+  top: 0;
+  left: -100px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffffff30,
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: buttonShine 4s infinite;
+}
+
+.main-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px #39324145;
+}
+
+.tiny-note {
+  margin-top: 17px;
+
+  color: #aaa0ad;
+
+  font-size: 11px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.mood-section,
+.actions-section {
+  margin-top: 10px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.section-number {
+  padding-top: 6px;
+
+  color: #bfb3c4;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-heading h2 {
+  font-size: 27px;
+  line-height: 1.3;
+}
+
+.section-heading p {
+  margin-top: 6px;
+
+  color: #958a99;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================
+   MOOD CARDS
+========================= */
+
+.mood-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(120px, 1fr));
+
+  gap: 17px;
+}
+
+.mood-card {
+  position: relative;
+
+  min-height: 135px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 27px;
+
+  background: #ffffff70;
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid #ffffff;
+
+  box-shadow: 0 12px 35px #5c4b6710;
+
+  transition:
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.35s,
+    background 0.35s;
+}
+
+.mood-card:hover {
+  transform: translateY(-9px) scale(1.02);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 45px #5c4b6720;
+}
+
+.mood-card.active {
+  transform: translateY(-9px) scale(1.03);
+
+  background: #fff;
+
+  box-shadow:
+    0 22px 50px #5c4b6725,
+    0 0 0 3px #ffdca8;
+}
+
+.mood-emoji {
+  font-size: 42px;
+
+  margin-bottom: 11px;
+
+  transition: 0.3s;
+}
+
+.mood-card:hover .mood-emoji {
+  transform: scale(1.18) rotate(-5deg);
+}
+
+.mood-name {
+  color: #716776;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.selected-dot {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #8fd3a9;
+  color: white;
+
+  font-size: 11px;
+
+  animation: pop 0.3s ease;
+}
+
+/* =========================
+   MESSAGE CARD
+========================= */
+
+.message-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  max-width: 760px;
+
+  margin: 38px auto;
+
+  padding: 30px;
+
+  border-radius: 30px;
+
+  background: #ffffffb8;
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid #ffffff;
+
+  box-shadow: 0 25px 60px #5c4b6718;
+
+  animation: cardReveal 0.55s ease both;
+}
+
+.message-icon {
+  flex: 0 0 auto;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 19px;
+
+  background: #ffe0d9;
+  color: #e9846e;
+
+  animation: heartbeat 2.5s infinite;
+}
+
+.message-label {
+  color: #ae8b91;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.message-content h3 {
+  margin-top: 7px;
+
+  font-size: 22px;
+}
+
+.message-content p {
+  margin: 9px 0 18px;
+
+  color: #786e7d;
+
+  line-height: 1.7;
+}
+
+.laugh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border-radius: 100px;
+
+  background: #ffe5ad;
+
+  color: #604d2b;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.25s;
+}
+
+.laugh-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #d9a94a25;
+}
+
+/* =========================
+   JOKE
+========================= */
+
+.joke-section {
+  max-width: 760px;
+
+  margin: 25px auto 45px;
+
+  padding: 27px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4d9,
+      #ffeed0
+    );
+
+  box-shadow: 0 20px 50px #a7793018;
+
+  animation: cardReveal 0.5s ease both;
+}
+
+.joke-top,
+.joke-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.joke-top > span {
+  color: #a08351;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.joke-top button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: transparent;
+
+  color: #866d43;
+
+  font-size: 12px;
+}
+
+.joke-body {
+  padding: 30px 5px;
+
+  color: #4b3f32;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+.joke-footer {
+  color: #9a835d;
+
+  font-size: 11px;
+}
+
+.joke-footer div {
+  display: flex;
+  gap: 6px;
+}
+
+.joke-footer button {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #ffffff99;
+
+  transition: 0.2s;
+}
+
+.joke-footer button:hover {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* =========================
+   ACTION CARDS
+========================= */
+
+.actions-section {
+  margin-top: 65px;
+}
+
+.action-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.action-card {
+  position: relative;
+
+  min-height: 235px;
+
+  padding: 24px;
+
+  border-radius: 28px;
+
+  background: #ffffff78;
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid #ffffff;
+
+  text-align: left;
+
+  box-shadow: 0 15px 40px #5c4b6710;
+
+  transition: 0.35s;
+}
+
+.action-card:hover {
+  transform: translateY(-9px);
+
+  background: #ffffff;
+
+  box-shadow: 0 25px 55px #5c4b6720;
+}
+
+.action-icon {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+
+  margin-bottom: 28px;
+
+  font-size: 27px;
+
+  transition: 0.3s;
+}
+
+.action-card:hover .action-icon {
+  transform: rotate(-6deg) scale(1.1);
+}
+
+.hug {
+  background: #ffe0eb;
+}
+
+.laugh {
+  background: #fff0bb;
+}
+
+.music {
+  background: #e1dcff;
+  color: #7467ba;
+}
+
+.gift {
+  background: #d9f4e5;
+  color: #52916c;
+}
+
+.action-card h3 {
+  font-size: 17px;
+}
+
+.action-card p {
+  max-width: 185px;
+
+  margin-top: 8px;
+
+  color: #948998;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.action-card > svg {
+  position: absolute;
+
+  right: 22px;
+  bottom: 23px;
+
+  color: #b2a6b5;
+
+  transition: 0.3s;
+}
+
+.action-card:hover > svg {
+  transform: translateX(5px);
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise-card {
+  position: relative;
+
+  max-width: 650px;
+
+  margin: 55px auto 20px;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  border-radius: 35px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8f8ef,
+      #ddf5eb
+    );
+
+  color: #50715e;
+
+  box-shadow: 0 25px 60px #4f8a6518;
+
+  overflow: hidden;
+
+  animation: surpriseAppear 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.confetti {
+  font-size: 25px;
+
+  letter-spacing: 10px;
+
+  margin-bottom: 20px;
+
+  animation: confettiFloat 2s ease-in-out infinite;
+}
+
+.surprise-card h2 {
+  margin: 12px 0;
+
+  font-size: 30px;
+}
+
+.surprise-card p {
+  line-height: 1.8;
+}
+
+.surprise-card button {
+  margin-top: 22px;
+
+  padding: 12px 22px;
+
+  border-radius: 100px;
+
+  background: white;
+
+  color: #50715e;
+
+  font-weight: 700;
+
+  transition: 0.25s;
+}
+
+.surprise-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #4f8a6520;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 95px 10px 25px;
+
+  color: #a59aa7;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+
+  color: #625768;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes surpriseAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.35);
+    opacity: 0.7;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  8% {
+    transform: scale(1.08);
+  }
+
+  16% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gentleBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes buttonShine {
+  0% {
+    left: -100px;
+  }
+
+  25%,
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes confettiFloat {
+  50% {
+    transform: translateY(-7px) rotate(2deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .mood-grid {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+
+  .action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .app {
+    padding: 17px;
+  }
+
+  .hero {
+    padding: 70px 5px 65px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .station-badge {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .mood-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .mood-card {
+    min-height: 120px;
+  }
+
+  .mood-name {
+    white-space: normal;
+  }
+
+  .action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .message-card {
+    flex-direction: column;
+  }
+
+  .joke-body {
+    font-size: 16px;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+
+  .hero h1 span {
+    margin-left: 3px;
+  }
+}

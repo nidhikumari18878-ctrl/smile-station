@@ -1,0 +1,111 @@
+.hug-card {
+  width: min(900px, 92%);
+  margin: 50px auto;
+  padding: 45px 30px;
+  border-radius: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 20px 60px rgba(80, 60, 100, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.hug-card:hover {
+  transform: translateY(-3px);
+}
+
+.hug-icon,
+.hug-celebration {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 220, 230, 0.7);
+}
+
+.hug-celebration {
+  font-size: 40px;
+  background: rgba(255, 235, 190, 0.7);
+  animation: hugPop 0.5s ease;
+}
+
+.hug-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  opacity: 0.5;
+}
+
+.hug-card h2 {
+  margin: 12px auto 15px;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  color: #292632;
+}
+
+.hug-card h2 span {
+  font-weight: 400;
+}
+
+.hug-card p {
+  margin: 0 auto;
+  color: #77727f;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.hug-card button {
+  margin-top: 26px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 999px;
+  background: #292632;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hug-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(40, 35, 50, 0.16);
+}
+
+@keyframes hugPop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .hug-card {
+    padding: 35px 22px;
+  }
+
+  .hug-card h2 {
+    font-size: 29px;
+  }
+
+  .hug-card p {
+    font-size: 14px;
+  }
+}
